@@ -1,0 +1,27 @@
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background:#06070e;
+    height: 70px;
+    
+}
+.nav-links {
+    width: 40%;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-size: 18px;
+    color: rgb(133, 98, 98);
+    text-decoration: none;
+
+}
+h3{
+    color:white;
+    font-weight: 600;
+    font-size: 35px;
+    
+
+}

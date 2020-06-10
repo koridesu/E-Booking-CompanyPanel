@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
 import AllBusses from './AllBusses';
+import "../styles/AddBus.css"
  class AddBus extends Component {
 
     state = {
@@ -30,14 +31,14 @@ import AllBusses from './AllBusses';
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <form>
                     <label>Arrival</label>
                     <input type = "text" name="arrival" onChange={this.onChangeHandler}></input>
                     <label>Departure</label>
                     <input type="text" name="departure" onChange={this.onChangeHandler}></input>
                     <label>Date</label>
-                    <input type="text" name="date" onChange={this.onChangeHandler}></input>
+                    <input style ={{width:"162px", height:"25px"}} type="date" name="date" onChange={this.onChangeHandler}></input>
                     <label>Time</label>
                     <input type="text" name="time" onChange={this.onChangeHandler}></input>
                     <label>Max Seat</label>
@@ -46,7 +47,7 @@ import AllBusses from './AllBusses';
                     <input type="text" name="price" onChange={this.onChangeHandler}></input>
                     <button onClick={this.onSubmitHandler} >ADD BUS</button>
                 </form>
-                <AllBusses id = {this.props.id}></AllBusses>
+                
             </div>
         )
     }
