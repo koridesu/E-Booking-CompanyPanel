@@ -5,7 +5,7 @@ class Login extends Component {
     state={
         username:"",
         password:"",
-
+       
     }
 
     onChangeHandler=(e)=>{
@@ -21,8 +21,16 @@ class Login extends Component {
             password:this.state.password,
         }
         axios.post(`http://localhost:8081/companylogin`,log).then(res=>{
-            console.log(res.data)
-            this.props.Authenticated(this.state.username,res.data.company_id)
+            console.log(res)
+            if(res.data!="")
+        {
+            this.props.Authenticated(this.state.username,res.data.company_id,true)
+            this.props.history.push('/mybusses');
+        }
+        else{
+            alert("Giriş bilgileri hatalı, lütfen kontrol ediniz!")
+        }
+
         })
 
     }    

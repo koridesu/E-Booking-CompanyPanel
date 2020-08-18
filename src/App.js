@@ -9,14 +9,16 @@ import AllBusses from './components/AllBusses';
 class App extends Component  {
   state={
     username:"",
-    userid:""
+    userid:"",
+    logStatus:false
   }
 
 
-  Authenticated=(user_name,id)=>{
+  Authenticated=(user_name,id,log)=>{
       this.setState({
          username: user_name,
-         userid: id
+         userid: id,
+         logStatus:log
       })
   }
  
@@ -24,7 +26,7 @@ class App extends Component  {
   return (
     <Router>
     <div className="App">
-       <Navbar></Navbar>
+       <Navbar logStatus={this.state.logStatus} Authenticated={this.Authenticated} ></Navbar>
       <Switch>
         <Route path="/" exact component={Home} />  
         <Route path='/login'render={(props) => <Login {...props} Authenticated={this.Authenticated} />}   />
